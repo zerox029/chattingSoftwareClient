@@ -10,6 +10,11 @@ ClientWindow::ClientWindow()
     connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
     connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(socketError(QAbstractSocket::SocketError)));
 
+    sendButton->setEnabled(false);
+    username->setEnabled(false);
+    message->setEnabled(false);
+    label_3->setEnabled(false);
+    label_4->setEnabled(false);
     messageSize = 0;
 }
 
@@ -71,12 +76,21 @@ void ClientWindow::receivedData()
 void ClientWindow::connected()
 {
     messageList->append(tr("<em>Connexion réussie !</em>"));
-    connexionButton->setEnabled(true);
+    sendButton->setEnabled(true);
+    username->setEnabled(true);
+    message->setEnabled(true);
+    label_3->setEnabled(true);
+    label_4->setEnabled(true);
 }
 
 void ClientWindow::disconnected()
 {
-    messageList->append(tr("<em>Deconnected from server</em>"));
+    messageList->append(tr("<em>Déconnecté du serveur</em>"));
+    sendButton->setEnabled(false);
+    username->setEnabled(false);
+    message->setEnabled(false);
+    label_3->setEnabled(false);
+    label_4->setEnabled(false);
 }
 
 void ClientWindow::socketError(QAbstractSocket::SocketError error)

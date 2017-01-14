@@ -19,7 +19,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="connectLayout">
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
@@ -124,7 +124,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="messageLayout">
      <item>
       <widget class="QLabel" name="label_3">
        <property name="text">
